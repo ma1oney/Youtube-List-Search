@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube List Search",
+  "short_name": "List Search",
+  "version": "1.0",
+  "description": "YouTubeの長いプレイリストを自動ロードし、リスト内の全動画を検索できるようにする拡張機能です。",
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "action": {
+    "default_icon": "icon-16.png"
+  },
+  "permissions": [
+    "storage" 
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*" 
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"], 
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
